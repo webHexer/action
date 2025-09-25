@@ -52,7 +52,7 @@ jobs:
           echo "NODE_ENV is $NODE_ENV"
           echo "TEST_USERNAME is $TEST_USERNAME"
           echo "TEST_PASSWORD is $TEST_PASSWORD"
-    deploy:
+  deploy:
       needs: build
       runs-on: ubuntu-latest
       steps:
