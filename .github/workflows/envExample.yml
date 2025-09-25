@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TEST_USERNAME: testuser
-      TEST_PASSWORD: pass1234
+      TEST_PASSWORD: $ {{ secrets.TEST_PASSWORD }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
