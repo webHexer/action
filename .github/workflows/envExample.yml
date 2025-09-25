@@ -11,10 +11,10 @@ env:
   NODE_ENV: test
 jobs:
   test:
-    runs-on: ubuntu-latest
     env:
       TEST_USERNAME: testuser
       TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -60,6 +60,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment: testing
+    env:
+      TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+      TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
