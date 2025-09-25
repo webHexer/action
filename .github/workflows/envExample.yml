@@ -74,6 +74,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: dist-files
+      - name: Check dist before upload
+        run: ls -la dist
       - name: Output Contents of dist folder
         run: ls dist-files
       - name: Deploy
