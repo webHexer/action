@@ -53,24 +53,24 @@ jobs:
           echo "TEST_USERNAME is $TEST_USERNAME"
           echo "TEST_PASSWORD is $TEST_PASSWORD"
   deploy:
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
-        - name: cache node modules
-          uses: actions/cache@v3
-          with:
-            path: ~/.npm
-            key: dep-node-modules-${{hashFiles('**/package-lock.json')}}
-        - name: Install dependencies
-          run: npm ci
-        - name: Download artifact
-          uses: actions/download-artifact@v3
-          with:
-            name: build-artifacts
-        - name: Output Contents of dist folder
-          run: ls -la dist
-        - name: Deploy
-        - run: echo "Deploying ..."
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: cache node modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: dep-node-modules-${{hashFiles('**/package-lock.json')}}
+      - name: Install dependencies
+        run: npm ci
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifacts
+      - name: Output Contents of dist folder
+        run: ls -la dist
+      - name: Deploy
+        run: echo "Deploying ..."
   
