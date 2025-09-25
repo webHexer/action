@@ -31,7 +31,7 @@ jobs:
           echo "TEST_USERNAME is $TEST_USERNAME"
           echo "TEST_PASSWORD is $TEST_PASSWORD"
       - name: Run tests
-        run: npm test
+        run: npm run test
   build:
     needs: test
     runs-on: ubuntu-latest
