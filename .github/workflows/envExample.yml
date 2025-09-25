@@ -81,5 +81,10 @@ jobs:
           path: downloaded-dist
       - name: Output artifact files
         run: ls -R downloaded-dist
+      - name: Output env variables
+        run: |
+          echo "NODE_ENV is $NODE_ENV"
+          echo "TEST_USERNAME is $TEST_USERNAME"
+          echo "TEST_PASSWORD is $TEST_PASSWORD"
       - name: Deploy
         run: echo "Deploying ..."
