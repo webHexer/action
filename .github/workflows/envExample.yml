@@ -1,4 +1,4 @@
-name: envExample
+name: Example for Environment Variables, Secrets, Cache Dependencies, Arifacts
 on: 
   pull_request:
     types: opened
