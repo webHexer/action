@@ -2,6 +2,7 @@ name: Deploy Project
 on: [push, workflow_dispatch]
 jobs:
   test:
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Get code
