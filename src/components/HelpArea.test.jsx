@@ -27,7 +27,7 @@ describe('HelpArea', () => {
     });
 
     it('renders correct help item texts', () => {
-        render(<HelpArea />);
+        render(<HelpAre />);
         expect(
             screen.getByText(
                 'Git is a version control system, helping you to manage your code and create code snapshots.'
