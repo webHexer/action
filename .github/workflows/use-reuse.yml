@@ -1,4 +1,4 @@
-name: Continue on Error Example
+name: Website Deployment
 on:
   push:
     branches:
@@ -38,7 +38,7 @@ jobs:
         id: run-tests
         run: npm run test
       - name: Upload test report
-        continue-on-error: true
+        if: failure() && steps.run-tests.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: test-report
