@@ -1,4 +1,4 @@
-name: Website Deployment
+name: Custom Action Use Example
 on:
   push:
     branches:
